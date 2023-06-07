@@ -19,7 +19,7 @@ spec:
         app: demo
     spec:
       containers:
-        - name:  havells_images
+        - name:  havells-images
           image: 2222s/havells:V-7
           ports:
             - containerPort: 8080

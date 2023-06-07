@@ -1,8 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  tomcat-deployment-nautilus
-  namespace: tomcat-namespace-nautilus
+  name:  havells-deployment
   labels:
     name: webdep
     app: demo
@@ -20,7 +19,7 @@ spec:
         app: demo
     spec:
       containers:
-        - name: tomcat-container-nautilus
-          image: gcr.io/kodekloud/centos-ssh-enabled:tomcat
+        - name:  havells_images
+          image: 2222s/havells:V-7
           ports:
             - containerPort: 8080

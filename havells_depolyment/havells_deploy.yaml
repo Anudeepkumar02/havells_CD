@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  tomcat-deployment-nautilus
+  namespace: tomcat-namespace-nautilus
+  labels:
+    name: webdep
+    app: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: webpod
+      app: demo
+  template:
+    metadata:
+      name: webpod
+      labels:
+        name: webpod
+        app: demo
+    spec:
+      containers:
+        - name: tomcat-container-nautilus
+          image: gcr.io/kodekloud/centos-ssh-enabled:tomcat
+          ports:
+            - containerPort: 8080
